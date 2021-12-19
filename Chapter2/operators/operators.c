@@ -84,3 +84,8 @@ int lower(int c) {
 
 // Explicit type conversions can be forced with a cast.
 // (type name) expression
+
+// ++n increments n before its value is used, while n++ increments n after its
+// value has been used. x = n++; sets x to 5
+// x = ++n; sets x to 6
+// in both cases, n becomes 6.
