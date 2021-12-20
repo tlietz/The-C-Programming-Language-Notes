@@ -89,3 +89,15 @@ int lower(int c) {
 // value has been used. x = n++; sets x to 5
 // x = ++n; sets x to 6
 // in both cases, n becomes 6.
+
+// x = x & ~077; sets the last six bits of x to zero, independent of word
+// length.
+
+/* getbits: get n bits from position p */
+unsigned getbits(unsigned x, int p, int n) {
+  // x >> (p+1-n) moves the desired field to the desired field to the right end
+  // of the word. ~0 is all 1-bits, shifting it left n positions places zeros in
+  // the rightmost n bits. the ~() makes a mask with ones in the rightmost n
+  // bits.
+  return (x >> (p + 1 - n)) & ~(~0 << n);
+}
